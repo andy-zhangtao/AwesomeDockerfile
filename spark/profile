@@ -1,0 +1,45 @@
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "$PS1" ]; then
+  if [ "$BASH" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ "`id -u`" -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+export SPARK_HOME=/home/hadoop/spark-2.0.1-bin-hadoop2.7
+export HADOOP_LOG_DIR=/home/hadoop/logs/hadoop
+export HADOOP_HOME=/home/hadoop/hadoop-2.7.3
+export HADOOP_PREFIX=/home/hadoop/hadoop-2.7.3
+export LS_COLORS=
+export HBASE_HOME=/home/hadoop/hbase-1.1.0.1
+export HADOOP_HOME_PRE=/home/hadoop
+export HIVE_HOME=/home/hadoop/apache-hive-2.0.0-bin
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-2.7.3/etc/hadoop
+export YARN_LOG_DIR=/home/hadoop/logs/yarn
+export KYLIN_HOME=/home/hadoop/apache-kylin-1.6.0-hbase1.x-bin
+export SCALA_HOME=/home/hadoop/scala-2.11.8
+export _=/usr/bin/env
+export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$HBASE_HOME/lib/*
