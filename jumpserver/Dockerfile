@@ -34,6 +34,7 @@ RUN   python /jumpserver/install/docker/get-pip.py &&   \
       ln -s /data/shadow /etc/shadow &&    \
       chmod -R 777 /jumpserver
 COPY  ansible_api.py /jumpserver/jperm/ansible_api.py
+COPY  connect.py /jumpserver/connect.py
 COPY  run.sh /run.sh
 EXPOSE 22/tcp 80/tcp
 CMD   ["/bin/sh","-c","/run.sh"]
