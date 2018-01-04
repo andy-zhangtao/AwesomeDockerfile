@@ -40,7 +40,7 @@ class AnsibleError(StandardError):
 
 class CommandValueError(AnsibleError):
     """
-    indicate the input value has error or invalid. 
+    indicate the input value has error or invalid.
     the data specifies the error field of input form.
     输入不合法 异常对象
     """
@@ -95,8 +95,9 @@ class MyInventory(Inventory):
             my_host.set_variable('ansible_ssh_user', username)
             my_host.set_variable('ansible_ssh_pass', password)
             my_host.set_variable('ansible_ssh_private_key_file', ssh_key)
-
-            # set other variables 
+            my_host.set_variable('ansible_python_interpreter', 'PATH=/opt/bin:$PATH python')
+            
+            # set other variables
             for key, value in host.iteritems():
                 if key not in ["hostname", "port", "username", "password"]:
                     my_host.set_variable(key, value)
@@ -185,7 +186,7 @@ class Command(MyInventory):
     def run(self, command, module_name="command", timeout=10, forks=10, pattern=''):
         """
         run command from andible ad-hoc.
-        command  : 必须是一个需要执行的命令字符串， 比如 
+        command  : 必须是一个需要执行的命令字符串， 比如
                  'uname -a'
         """
         data = {}
@@ -422,8 +423,8 @@ class MyTask(MyRunner):
 
 
 class CustomAggregateStats(callbacks.AggregateStats):
-    """                                                                             
-    Holds stats about per-host activity during playbook runs.                       
+    """
+    Holds stats about per-host activity during playbook runs.
     """
     def __init__(self):
         super(CustomAggregateStats, self).__init__()
@@ -431,8 +432,8 @@ class CustomAggregateStats(callbacks.AggregateStats):
 
     def compute(self, runner_results, setup=False, poll=False,
                 ignore_errors=False):
-        """                                                                         
-        Walk through all results and increment stats.                               
+        """
+        Walk through all results and increment stats.
         """
         super(CustomAggregateStats, self).compute(runner_results, setup, poll,
                                               ignore_errors)
@@ -440,12 +441,12 @@ class CustomAggregateStats(callbacks.AggregateStats):
         self.results.append(runner_results)
 
     def summarize(self, host):
-        """                                                                         
-        Return information about a particular host                                  
+        """
+        Return information about a particular host
         """
         summarized_info = super(CustomAggregateStats, self).summarize(host)
 
-        # Adding the info I need                                                    
+        # Adding the info I need
         summarized_info['result'] = self.results
 
         return summarized_info
@@ -530,5 +531,3 @@ if __name__ == "__main__":
 #   task = Tasks(resource)
 #   print task.add_init_users()
 #   print task.del_init_users()
-
-
