@@ -1,0 +1,3 @@
+这个镜像调整时区为标准北京时间,同时增加了wget和curl两个工具。
+可以作为最基础的alpine镜像使用
+vikings/alpine:base
