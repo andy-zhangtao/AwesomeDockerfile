@@ -2,3 +2,7 @@
 参数一： 程序全路径 /go/src/github.com/xxxxxx
 参数二： 编译的程序名称
 最终程序会放到bin目录中
+
+##
+vikings/golang:onbuild-dep
+这个镜像包含了dep工具，用来自动执行dep命令生成/更新vendor依赖包
