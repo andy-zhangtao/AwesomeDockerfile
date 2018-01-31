@@ -5,6 +5,10 @@ Some common docker file
 
 ### Kong (vikings/kong:onbuild-\<version\>)
 
+#### v1.0.3
+* Use alpine as baseimage
+* Openresty use 1.11.2.5
+
 #### v1.0.1
 * Pre-install lua dependencies
 
