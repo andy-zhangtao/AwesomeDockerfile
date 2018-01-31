@@ -1,6 +1,6 @@
 # vikings/kong:onbuild
 FROM	vikings/openresty:8-debian-1.11
-RUN		apt-get install -y unzip make gcc libssl-dev git net-tools && \
+RUN		apt-get install -y unzip make gcc libssl-dev git net-tools curl && \
 		wget https://github.com/luarocks/luarocks/archive/2.4.3.tar.gz && \
 		tar -zxvf 2.4.3.tar.gz && \
 		cd /luarocks-2.4.3 && \
