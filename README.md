@@ -32,7 +32,10 @@ Some common docker file
 curl -sS https://gist.githubusercontent.com/andy-zhangtao/8e8c0dcbc4e0b58aaa90f2502f36bddd/raw/56df86e5a84d63a16c4cf5c5faa34e3f40600643/build.sh > build.sh
 sh build.sh
 ```
-
+或者通过下面的命令
+```
+sh <(curl -sS https://gist.githubusercontent.com/andy-zhangtao/8e8c0dcbc4e0b58aaa90f2502f36bddd/raw/56df86e5a84d63a16c4cf5c5faa34e3f40600643/build.sh)
+```
 在构建时会生成`vikings/imgname:<Git tag>`格式的镜像名称。如果需要指定自定义的镜像名称，在每个目录中添加tags文件。文件中写明镜像名称，如`vikings/kong:onbuild-`，然后构建时会生成`vikings/kong:onbuild-<Git tag>`格式的名称。
 
 **目前暂不支持目录中存在二级目录**
