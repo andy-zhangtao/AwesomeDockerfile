@@ -1,4 +1,7 @@
 FROM	golang:1.9-alpine3.7
+LABEL MAINTAINER=ztao@gmail.com
 RUN		apk update && \
-		apk add git && \
-		go get -u github.com/golang/dep/cmd/dep
+			apk add git && \
+			go get -u github.com/golang/dep/cmd/dep
+COPY entrypoint-dep.sh /entrypoint.sh
+ENTRYPOINT ["/bin/sh","/entrypoint.sh"]

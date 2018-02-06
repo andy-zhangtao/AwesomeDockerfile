@@ -5,6 +5,9 @@ Some common docker file
 
 ### Kong (vikings/kong:onbuild-\<version\>)
 
+#### v1.0.5
+* Support Execute Dep when build go binary
+
 #### v1.0.4
 * Pre-install kong v0.12.0 source code
 
