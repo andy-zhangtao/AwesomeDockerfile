@@ -12,7 +12,10 @@ if [ "x$DEP" = 'xtrue' ]; then
     dep ensure -v --update
   fi
 fi
-echo "****$1****"
-echo "**Go Build**"
-GOARCH=amd64 go build -o $2 ;mkdir -p $1/bin; mv $2 bin/
+
+if [ "x$BUILD" = 'xtrue' ]; then
+  echo "****$1****"
+  echo "**Go Build**"
+  GOARCH=amd64 go build -o $2 ;mkdir -p $1/bin; mv $2 bin/
+fi
 echo "**Complete**"
