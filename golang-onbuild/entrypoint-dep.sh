@@ -13,8 +13,15 @@ if [ "x$DEP" = 'xtrue' ]; then
   fi
   if [ "x$GITUSR" != 'x' ]; then
     if [ "x$GITPASS" != 'x' ]; then
-      curl -sS https://gist.githubusercontent.com/andy-zhangtao/498cab5c6035dcf0a31dfa8766427ee3/raw/db670d1c4e733fcf9d21c23b68539c304cdb0d64/ExpectForGit.exp > script.exp
+      curl -sS https://gist.githubusercontent.com/andy-zhangtao/498cab5c6035dcf0a31dfa8766427ee3/raw/7d8ba9f69e86b6005623a8ee36bcc199fe6e9bfc/ExpectForGit.exp > script.exp
       expect script.exp
+      if [ -f Gopkg.lock ]
+      then
+        dep ensure -v --update
+      else
+        dep init -v
+        dep ensure -v --update
+      fi
     fi
   fi
 fi
