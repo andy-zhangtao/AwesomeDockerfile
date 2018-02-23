@@ -3,6 +3,10 @@ Some common docker file
 
 # Chang Log
 
+### golang:onbuild
+#### v1.0.6
+* Support execute dep alone
+
 ### Kong (vikings/kong:onbuild-\<version\>)
 
 #### v1.0.5
