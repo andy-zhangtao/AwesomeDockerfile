@@ -6,6 +6,7 @@ Some common docker file
 ### golang:onbuild
 #### v1.0.6
 * Support execute dep alone
+* Pre-install expect(For Git Push)
 
 ### Kong (vikings/kong:onbuild-\<version\>)
 
