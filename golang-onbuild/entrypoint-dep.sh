@@ -19,7 +19,13 @@ if [ "x$DEP" = 'xtrue' ]; then
   fi
   if [ "x$GITUSR" != 'x' ]; then
     if [ "x$GITPASS" != 'x' ]; then
-      curl -sS https://gist.githubusercontent.com/andy-zhangtao/498cab5c6035dcf0a31dfa8766427ee3/raw/4d195eb05c8168ca9b29b73b49ede778cf8a0812/ExpectForGit.exp > script.exp
+      echo "=== Ready to push ==="
+      git branch
+      git config --global user.email $GITEMAIL
+      git config --global user.name $GITUSR
+      git add -f *
+      git commit -m "Add Vendor Package"
+      curl -sS https://gist.githubusercontent.com/andy-zhangtao/498cab5c6035dcf0a31dfa8766427ee3/raw/101d9667b101a2982d53dda06c1b780c4c1f7e31/ExpectForGit.exp > script.exp
       expect script.exp
     fi
   fi
