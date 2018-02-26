@@ -3,6 +3,10 @@ Some common docker file
 
 # Chang Log
 
+### golang:unit-test-mongo
+#### v1.0.7
+* Add Nsqd 
+
 ### golang:onbuild
 #### v1.0.6
 * Support execute dep alone
