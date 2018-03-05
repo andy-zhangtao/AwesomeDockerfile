@@ -6,6 +6,7 @@ Some common docker file
 ### python:centos
 #### v1.0.8
 * Pre-install python3.6.4 pip3
+* Pre-install jumpserver library
 
 ### golang:unit-test-mongo
 #### v1.0.7

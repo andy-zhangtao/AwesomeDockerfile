@@ -4,3 +4,4 @@
 * python 3.6.4
 * pip3
 * mysql client
+* jumpserver library
