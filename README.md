@@ -3,9 +3,13 @@ Some common docker file
 
 # Chang Log
 
+### python:centos
+#### v1.0.8
+* Pre-install python3.6.4 pip3
+
 ### golang:unit-test-mongo
 #### v1.0.7
-* Add Nsqd 
+* Add Nsqd
 
 ### golang:onbuild
 #### v1.0.6
