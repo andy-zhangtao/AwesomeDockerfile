@@ -5,3 +5,4 @@
 * pip3
 * mysql client
 * jumpserver library
+* pyenv
