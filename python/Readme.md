@@ -6,3 +6,4 @@
 * mysql client
 * jumpserver library
 * pyenv
+* virtualenv
