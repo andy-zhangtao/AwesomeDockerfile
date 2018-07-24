@@ -17,10 +17,11 @@ Some common docker file
 * Support execute dep alone
 * Pre-install expect(For Git Push)
 
-### Kong (vikings/kong:onbuild-\<version\>)
 
 #### v1.0.5
 * Support Execute Dep when build go binary
+
+### Kong (vikings/kong:onbuild-\<version\>)
 
 #### v1.0.4
 * Pre-install kong v0.12.0 source code
