@@ -1,6 +1,7 @@
 FROM    node:11-alpine
 RUN     npm install gitbook-cli -g && \
-        mkdir /book
+        mkdir /book && \
+        gitbook init /tmp
 VOLUME  [ "/book" ]
 WORKDIR /book
 ENTRYPOINT  ["gitbook","serve"]
