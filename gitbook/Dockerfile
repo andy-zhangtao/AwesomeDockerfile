@@ -1,8 +1,8 @@
 FROM    node:11-alpine
 VOLUME  [ "/book" ]
+WORKDIR /book
 RUN     yarn global add gitbook-cli
 COPY    book.json /book/book.json
-RUN     gitbook install /book && \
+RUN     gitbook install && \
 		gitbook init /book
-WORKDIR /book
 ENTRYPOINT  ["gitbook","serve","/book"]
