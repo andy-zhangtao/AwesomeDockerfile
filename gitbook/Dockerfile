@@ -1,5 +1,4 @@
 FROM    node:11-alpine
-VOLUME  [ "/book" ]
 WORKDIR /book
 RUN     yarn global add gitbook-cli
 COPY    book.json /book/book.json
