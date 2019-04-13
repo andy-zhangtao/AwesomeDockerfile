@@ -5,4 +5,5 @@ RUN apk update && \
     update-ca-certificates
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone
+COPY pprof /pprof
 COPY repositories /etc/apk/repositories
