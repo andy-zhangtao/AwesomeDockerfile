@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:longsleep/golang-backports && \
     apt-get update && \
-    apt-get install -y curl vim make iputils-ping wget golang-go
+    apt-get install -y curl vim make iputils-ping wget golang-go go-dep
 
 # golang 1.12
 RUN   wget https://github.com/andy-zhangtao/shadow-rest/releases/download/v0.1.8/shadowsocks-local-linux64-1.1.5.gz -O /root/shadowsocks-local-linux64-1.1.5.gz && \
