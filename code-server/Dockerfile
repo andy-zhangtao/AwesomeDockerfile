@@ -1,6 +1,7 @@
 FROM    codercom/code-server
 WORKDIR /root
-RUN     apt-get install -y curl vim make iputils-ping python-pip
+RUN     apt-get update && \
+    apt-get install -y curl vim make iputils-ping python-pip
 # golang 1.12
 RUN     pip install  shadowsocks && \
     curl -O https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz && \
