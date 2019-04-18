@@ -1,9 +1,11 @@
 FROM    codercom/code-server
 WORKDIR /root
 RUN     apt-get update && \
-    apt-get install -y curl vim make iputils-ping python-pip
+    apt-get install -y curl vim make iputils-ping wget
+
 # golang 1.12
-RUN     pip install  shadowsocks && \
+RUN   wget https://github.com/andy-zhangtao/shadow-rest/releases/download/v0.1.8/shadowsocks-local-linux64-1.1.5.gz -O /root/shadowsocks-local-linux64-1.1.5.gz && \
+    gunzip /root/shadowsocks-local-linux64-1.1.5.gz && \
     curl -O https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz && \
     tar -xvf go1.12.1.linux-amd64.tar.gz && \
     chown -R root:root ./go && \
