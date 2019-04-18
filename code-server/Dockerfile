@@ -1,6 +1,7 @@
 FROM    codercom/code-server
 WORKDIR /root
-RUN     add-apt-repository ppa:longsleep/golang-backports && \
+RUN apt-get install -y software-properties-common && \
+    add-apt-repository ppa:longsleep/golang-backports && \
     apt-get update && \
     apt-get install -y curl vim make iputils-ping wget golang-go
 
