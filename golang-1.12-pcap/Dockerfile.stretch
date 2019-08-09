@@ -1,0 +1,4 @@
+FROM golang:stretch
+ENV maintainer=ztao8607@gmail.com
+RUN apt-get update && \
+    apt-get install -y libpcap-dev
