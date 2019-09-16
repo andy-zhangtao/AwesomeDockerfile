@@ -26,7 +26,7 @@ RUN apt-get install -y git autoconf \
     libx264-dev \
     libmp3lame-dev \
     libopus-dev \
-    nasm
+    nasm ; exit 0
 
 WORKDIR /
 RUN mkdir -p ~/ffmpeg_sources ~/bin && \
