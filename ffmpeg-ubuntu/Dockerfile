@@ -61,7 +61,7 @@ RUN cd ~/ffmpeg_sources && \
     --enable-libx265 \
     --enable-nonfree && \
     PATH="$HOME/bin:$PATH"
-RUN cd ~/ffmpeg_sources && \
+RUN cd ~/ffmpeg_sources/ffmpeg && \
     make && \
     make install && \
     hash -r
