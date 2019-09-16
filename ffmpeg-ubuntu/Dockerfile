@@ -1,7 +1,7 @@
 FROM ubuntu
 ADD sources.list /etc/apt/sources.list
-RUN apt-get update && \
-    apt-get install -y git autoconf \
+RUN apt-get update
+RUN apt-get install -y git autoconf \
     automake \
     build-essential \
     cmake \
