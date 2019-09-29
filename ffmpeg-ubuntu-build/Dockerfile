@@ -1,7 +1,7 @@
 FROM vikings/ffmpeg-ubuntu
 ONBUILD COPY Makefile /root/ffmpeg_sources/ffmpeg/libavfilter/Makefile
 ONBUILD COPY *.c /root/ffmpeg_sources/ffmpeg/libavfilter/
-ONBUILD RUN cd ~/ffmpeg_sources/ffmpeg \
+ONBUILD RUN cd ~/ffmpeg_sources/ffmpeg && \
     PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
     --prefix="$HOME/ffmpeg_build" \
     --pkg-config-flags="--static" \
