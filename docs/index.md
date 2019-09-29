@@ -13,3 +13,4 @@
 > ffmpeg 开发类
 * [FFMPEG-Go-Ubuntu](ffmpeg-go-ubuntu.md)
 * [FFMPEG-Ubuntu](ffmpeg-ubuntu.md)
+* [FFMPEG-Ubuntu-Build](ffmpeg-ubuntu-build.md)
