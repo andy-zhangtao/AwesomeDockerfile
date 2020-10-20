@@ -21,3 +21,22 @@ RUN apt-get update && \
 configure && make && make install
 ```
 就可以在`/usr/local/openresty/nginx/sbin/nginx`找到构建好的`openresty`
+
+## 实例
+
+下面是使用`dev`镜像进行本地构建的`Dockerfile`。
+
+```Dockerfile
+FROM vikings/openresty:dev as builder
+COPY . /openresty
+WORKDIR /openresty
+RUN ./configure && \
+    make && \
+    make install
+
+FROM ubuntu:20.04
+COPY --from=builder /usr/local/openresty/nginx/sbin/nginx /usr/local/openresty/nginx/sbin/nginx
+COPY --from=builder /usr/local/openresty/luajit/lib/libluajit-5.1.so.2.1.0 /usr/local/openresty/luajit/lib/libluajit-5.1.so.2
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libssl.so.1.1 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+```
