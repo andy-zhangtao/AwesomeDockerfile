@@ -35,7 +35,7 @@ RUN ./configure && \
     make install
 
 FROM ubuntu:20.04
-COPY --from=builder /usr/local/openresty/nginx/sbin/nginx /usr/local/openresty/nginx/sbin/nginx
+COPY --from=builder /usr/local/openresty/ /usr/local/openresty/
 COPY --from=builder /usr/local/openresty/luajit/lib/libluajit-5.1.so.2.1.0 /usr/local/openresty/luajit/lib/libluajit-5.1.so.2
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libssl.so.1.1 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
