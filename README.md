@@ -1,47 +1,7 @@
 # AwesomeDockerfile
 Some common docker file
 
-# Chang Log
-
-### python:centos
-#### v1.0.8
-* Pre-install python3.6.4 pip3
-* Pre-install jumpserver library
-
-### golang:unit-test-mongo
-#### v1.0.7
-* Add Nsqd
-
-### golang:onbuild
-#### v1.0.6
-* Support execute dep alone
-* Pre-install expect(For Git Push)
-
-
-#### v1.0.5
-* Support Execute Dep when build go binary
-
-### Kong (vikings/kong:onbuild-\<version\>)
-
-#### v1.0.4
-* Pre-install kong v0.12.0 source code
-
-#### v1.0.3
-* Use alpine as baseimage
-* Openresty use 1.11.2.5
-
-#### v1.0.1
-* Pre-install lua dependencies
-
-#### v1.0.0
-
-* Add net-tools for check port listening
-
-### openresty-dev
-
-#### v1.0.2
-
-* Downgrade openresty version. 1.13 -> 1.11
+[镜像文档](http://dockerfile.docs.devexp.cn/)
 
 # Auto Build
 
