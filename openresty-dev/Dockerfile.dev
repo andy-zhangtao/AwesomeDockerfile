@@ -1,0 +1,5 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get install -y libreadline-dev libncurses5-dev libpcre3-dev  \
+    libssl-dev perl make build-essential wget zlib1g-dev

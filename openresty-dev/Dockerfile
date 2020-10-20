@@ -1,16 +1,16 @@
-FROM ubuntu:17.10
+FROM ubuntu:20.04
 
 RUN apt-get update && \
     apt-get install -y libreadline-dev libncurses5-dev libpcre3-dev  \
-    libssl-dev perl make build-essential wget
+    libssl-dev perl make build-essential wget zlib1g-dev
 
-RUN wget https://openresty.org/download/openresty-1.11.2.3.tar.gz && \
-    tar -zxvf openresty-1.11.2.3.tar.gz && \
-    cd /openresty-1.11.2.3 && \
+RUN wget https://openresty.org/download/openresty-1.17.8.2.tar.gz && \
+    tar -zxvf openresty-1.17.8.2.tar.gz && \
+    cd /openresty-1.17.8.2 && \
     ./configure && \
     make && \
     make install
-     
+
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 
 CMD ["/usr/local/openresty/bin/openresty","-g","daemon off;"]
