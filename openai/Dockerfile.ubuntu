@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND="noninteractive" TZ="Asia/Shanghai"
+RUN apt-get update && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa -y
+RUN apt-get install -y git python3.9 python3-pip
+
